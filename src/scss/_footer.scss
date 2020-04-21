@@ -1,0 +1,55 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  margin-top: 5em;
+  padding: 3em 0 2em 0;
+
+  // Reset link style
+  a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    box-sizing: inherit;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5em;
+    font: light 1em "Lato";
+    color: black;
+  }
+
+  .links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    svg {
+      width: 1.3em;
+      height: 100%;
+      margin-right: 15px;
+
+      path {
+        fill: black;
+      }
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: $color-blue;
+      text-decoration-color: $color-glitch-two;
+
+      path {
+        fill: $color-blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+#load_screen {
+  transition: opacity 1s;
+  position: fixed;
+  z-index: 999;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1em;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: lighten($color-blue, 1.2);
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, $color-blue, lighten($color-blue, 1.2));
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, $color-blue, lighten($color-blue, 1.2));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: cover;
+
+}
+
+
+#water-fill {
+  position: relative;
+  top: 200px;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .box {
+    height: 220px;
+    width: 220px;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    // Hide wave svg outside circle
+    border-radius: 100%;
+    overflow: hidden;
+
+    #enter {
+      // 	Postition enter button in center
+      position: absolute;
+      top: 90px;
+      z-index: 1000;
+      left: 55px;
+      text-align: center;
+      border-radius: 100%;
+      background-color: transparent;
+      font-size: 2em;
+      border-width: 0px;
+      color: white;
+
+      path {
+        fill: white;
+      }
+
+      &:hover {
+
+        path {
+          fill: lightblue;
+        }
+      }
+    }
+
+    .percent {
+      // Hide percent text
+      display: none;
+    }
+
+    .water {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      transform: translate(0, 100%);
+      background: blue;
+      transition: all 0.3s;
+
+      &_wave {
+        width: 200%;
+        position: absolute;
+        bottom: 100%;
+
+        &_back {
+          right: 0;
+          fill: lightblue;
+          animation: wave-back 1.4s infinite linear;
+        }
+
+        &_front {
+          left: 0;
+          fill: blue;
+          margin-bottom: -1px;
+          animation: wave-front 0.7s infinite linear;
+        }
+      }
+    }
+  }
+
+  @keyframes wave-front {
+    100% {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @keyframes wave-back {
+    100% {
+      transform: translate(50%, 0);
+    }
+  }
+}

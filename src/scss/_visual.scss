@@ -1,0 +1,188 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5em;
+  background-color: white;
+  z-index: 90;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.control_container {
+  position: fixed;
+  top: 0;
+  left: calc(50% - 2.5em);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ height: 5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  /*border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;*/
+}
+
+.control_container:after {
+  flex: auto;
+  margin: 0 auto;
+  content: "";
+}
+
+.control_container>* {
+  width: calc(100% - 0em);
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.control_container>*:nth-child(1) {
+  margin-left: 0;
+}
+
+.control_container>*:nth-child(1n) {
+  margin-right: 0;
+}
+
+.control_container>*:nth-child(1n + 1) {
+  margin-left: 0;
+}
+
+.mute_btn {
+  transform: scaleX(-1);
+  position: fixed;
+  top: 1em;
+  right: 0.5em;
+  font-size: 2em;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .muted {
+    display: none;
+  }
+
+  @include small_screen {
+    position: fixed;
+    top: 1em;
+    right: 1.2em;
+    font-size: 3em;
+    transform: scaleX(-1);
+  }
+
+  @include medium_screen {
+    position: fixed;
+    top: 1em;
+    right: 1.2em;
+    font-size: 3em;
+    transform: scaleX(-1);
+  }
+
+  @include large_screen {
+    position: fixed;
+    top: 1em;
+    right: 1.2em;
+    font-size: 3em;
+    transform: scaleX(-1);
+  }
+}
+
+.reset_btn {
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .muted {
+    display: none;
+  }
+
+  @include small_screen {
+    position: fixed;
+    top: 2.5em;
+    right: 1.2em;
+    font-size: 3em;
+  }
+
+  @include medium_screen {
+    position: fixed;
+    top: 2.5em;
+    right: 1.2em;
+    font-size: 3em;
+  }
+
+  @include large_screen {
+    position: fixed;
+    top: 3em;
+    right: 1.5em;
+    font-size: 2.5em;
+  }
+}
+
+
+#line {
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(90deg, grey, lightblue);
+  position: fixed;
+  top: 5em;
+}
+
+.music {
+
+  span {
+    animation: audio-wave 2s infinite ease-in-out;
+    background: $color-blue;
+
+    bottom: calc(50% - 0.4em);
+    position: absolute;
+
+    display: block;
+    height: 0.3em;
+    width: 0.6em;
+    border-radius: .3em;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        left: 0.68em * ($i - 0.1);
+        animation-delay: 0.25s * ($i - 1);
+      }
+    }
+  }
+}
+
+@keyframes audio-wave {
+  0% {
+    height: 0.3em;
+    transform: translateY(0px);
+    background: $color-blue;
+    border-radius: 0.1em;
+  }
+
+  25% {
+    height: 2.500em;
+    transform: translateY(1.25em);
+    background: $color-glitch-two;
+    border-radius: .3em;
+  }
+
+  50% {
+    height: 0.3em;
+    transform: translateY(0px);
+    background: $color-blue;
+    border-radius: .3em;
+  }
+
+  100% {
+    height: 0.3em;
+    transform: translateY(0px);
+    background: $color-blue;
+    border-radius: 0.1em;
+
+
+  }
+}

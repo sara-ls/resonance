@@ -1,0 +1,43 @@
+html,
+body {
+
+  &,
+  * {
+    cursor: none;
+    font-family: 'Lato';
+  }
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 100000;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  // border: 1px solid black;
+}
+
+.cursor-dot-outline {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(aqua, 0.4);
+}
+
+/* smartphones, touchscreens */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot,
+  .cursor-dot-outline {
+    display: none;
+  }
+}

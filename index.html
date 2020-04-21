@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Resonance</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="Custom Ambient Noise">
+
+	<meta name="keywords"
+		content="Sara, Sampson, sounds, nature sounds, chill, play, mix, boost, productivity, improve, concentration, ambient, enviroment, soundbord, zen, calming, calm, resonance">
+
+	<meta name="author" content="Sara Sampson">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="images/favicon.png">
+
+
+	<script src="./bundle.js"></script>
+
+
+</head>
+
+<body>
+
+	<!-- Custom Cursor -->
+	<div class="cursor-dot-outline"></div>
+	<div class="cursor-dot"></div>
+
+	<!-- Loading Animation -->
+	<section id="load_screen">
+		<header>
+			<h1>Resonance</h1>
+			<p class="desc">
+				Check your system volume, then click enter.
+			</p>
+		</header>
+
+		<div class="loader_wrap" id="water-fill">
+			<div class="box">
+				<button id="enter">ENTER</button>
+				<div class="percent">
+					<div class="percentNum" id="count">0</div>
+					<div class="percentB">%</div>
+				</div>
+				<div id="water" class="water">
+					<svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+						<path
+							d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
+						</path>
+						<path
+							d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z">
+						</path>
+						<path
+							d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z">
+						</path>
+						<path
+							d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z">
+						</path>
+					</svg>
+					<svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+						<path
+							d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z">
+						</path>
+						<path
+							d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z">
+						</path>
+						<path
+							d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z">
+						</path>
+						<path
+							d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z">
+						</path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Nav -->
+	<nav>
+
+		<div class="mute_btn">
+			<a href="#!">
+				<img src="images/mute.png" alt="mute-icon" class="unmuted" />
+				<img src="images/sound.png" alt="unmute-icon" class="muted" />
+			</a>
+		</div>
+
+		<div class="reset_btn">
+			<a href="#!">
+				<img src="images/reset.png" alt="reset-icon" />
+			</a>
+		</div>
+
+		<div class="control_container">
+
+			<div class="music">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				</button>
+			</div>
+		</div>
+	</nav>
+	<div id="line"></div>	
+
+	<header>
+		<h1>Resonance</h1>
+		<p class="desc">
+			Click the icons below to mix ambient sounds.
+		</p>
+	</header>
+
+
+
+
+
+	<!-- Sounds -->
+	<section id="main">
+		<div class="sounds_container">
+
+			<!-- RAIN -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/rain.mp3" type="audio/mpeg">
+					<source src="sounds/rain.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/rain.png" alt="Rain Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- THUNDER -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/thunder.mp3" type="audio/mpeg">
+					<source src="sounds/thunder.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/thunder.png" alt="Thunder Sound">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- FOREST -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/forest.mp3" type="audio/mpeg">
+					<source src="sounds/forest.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/forest.png" alt="Forest Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- LEAVES -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/leaves.mp3" type="audio/mpeg">
+					<source src="sounds/leaves.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/leaves.png" alt="Leaves in Wind Sound">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- FIRE -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/fire.mp3" type="audio/mpeg">
+					<source src="sounds/fire.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/fire.png" alt="Fire Sound">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+
+			<!-- BIRDS -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/birds.mp3" type="audio/mpeg">
+					<source src="sounds/birds.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/bird.png" alt="Bird Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- BEACH -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/beach.mp3" type="audio/mpeg">
+					<source src="sounds/beach.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/beach.png" alt="Beach Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- RIVER -->
+			<div class="sound_block">
+				<audio>
+					<source src="sounds/river.mp3" type="audio/mpeg">
+					<source src="sounds/river.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/river.png" alt="River Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume_bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+		</div>
+	</section>
+
+
+	<footer>
+		<div class="links-container">
+			<a href="https://sarasampson.com/"> <svg xmlns="http://www.w3.org/2000/svg" height="512pt" viewBox="0 0 512 512"
+					width="512pt">
+					<path
+						d="m437.019531 74.980469c-48.351562-48.351563-112.640625-74.980469-181.019531-74.980469-68.382812 0-132.667969 26.628906-181.019531 74.980469-48.351563 48.351562-74.980469 112.636719-74.980469 181.019531 0 68.378906 26.628906 132.667969 74.980469 181.019531 48.351562 48.351563 112.636719 74.980469 181.019531 74.980469 68.378906 0 132.667969-26.628906 181.019531-74.980469 48.351563-48.351562 74.980469-112.640625 74.980469-181.019531 0-68.382812-26.628906-132.667969-74.980469-181.019531zm-308.679687 367.40625c10.707031-61.648438 64.128906-107.121094 127.660156-107.121094 63.535156 0 116.953125 45.472656 127.660156 107.121094-36.347656 24.972656-80.324218 39.613281-127.660156 39.613281s-91.3125-14.640625-127.660156-39.613281zm46.261718-218.519531c0-44.886719 36.515626-81.398438 81.398438-81.398438s81.398438 36.515625 81.398438 81.398438c0 44.882812-36.515626 81.398437-81.398438 81.398437s-81.398438-36.515625-81.398438-81.398437zm235.042969 197.710937c-8.074219-28.699219-24.109375-54.738281-46.585937-75.078125-13.789063-12.480469-29.484375-22.328125-46.359375-29.269531 30.5-19.894531 50.703125-54.3125 50.703125-93.363281 0-61.425782-49.976563-111.398438-111.402344-111.398438s-111.398438 49.972656-111.398438 111.398438c0 39.050781 20.203126 73.46875 50.699219 93.363281-16.871093 6.941406-32.570312 16.785156-46.359375 29.265625-22.472656 20.339844-38.511718 46.378906-46.585937 75.078125-44.472657-41.300781-72.355469-100.238281-72.355469-165.574219 0-124.617188 101.382812-226 226-226s226 101.382812 226 226c0 65.339844-27.882812 124.277344-72.355469 165.578125zm0 0" />
+				</svg>
+				sarasampson.com</a>
+			<a href="https://www.linkedin.com/in/sara-sampson-152365a2/"><svg id="regular" enable-background="new 0 0 24 24"
+					height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="m18.59 24c.103 0 4.762-.001 4.66-.001.414 0 .75-.336.75-.75-.35-7.857 1.842-16.148-6.338-16.148-1.573 0-2.826.537-3.729 1.247 0-1.461-1.579-.653-5.224-.87-.414 0-.75.336-.75.75.302 14.166-.674 15.771.75 15.771h4.66c1.353 0 .492-1.908.75-8.188 0-2.594.75-3.102 2.046-3.102 1.434 0 1.675.996 1.675 3.228.257 6.167-.598 8.063.75 8.063zm-2.425-12.791c-4.491 0-3.546 4.938-3.546 11.29h-3.16v-13.521h2.974v1.298c0 .72 1.097 1.074 1.479.35.492-.934 1.77-2.025 3.75-2.025 3.527 0 4.838 1.733 4.838 6.396v7.503h-3.16c0-7.144.756-11.291-3.175-11.291z" />
+					<path
+						d="m1.122 7.479c-1.42 0-.448 1.585-.75 15.771 0 .414.336.75.75.75h4.665c1.42 0 .448-1.585.75-15.771 0-1.295-1.881-.531-5.415-.75zm3.915 15.021h-3.165v-13.521h3.165z" />
+					<path
+						d="m3.452 0c-4.576 0-4.548 6.929 0 6.929 4.545 0 4.581-6.929 0-6.929zm0 5.429c-2.568 0-2.592-3.929 0-3.929 2.597 0 2.564 3.929 0 3.929z" />
+				</svg>LinkedIn</a>
+			<a href="https://github.com/sara-ls"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="48"
+					height="48">
+					<path
+						d="m256 0c-140.699219 0-256 116.300781-256 257 0 139.882812 114.25 255 256 255 141.574219 0 256-114.945312 256-255 0-140.699219-115.300781-257-256-257zm45 477.5c-14.398438 3-29.699219 4.5-45 4.5s-30.601562-1.5-45-4.5v-70.199219c0-16.800781 4.5-22.800781 10.5-30.902343 3.054688-3.492188 4.898438-6.625 18.597656-27.296876l-23.097656-3.601562c-59.402344-8.699219-82.800781-39.601562-92.101562-63.601562-12-32.097657-5.699219-72.300782 15.902343-97.796876 3.300781-3.902343 6-10.503906 3.601563-17.402343-4.503906-13.800781-3.902344-35.699219-.902344-44.101563 15.90625 2.273438 32.261719 13.667969 45.902344 21.902344 6.285156 3.667969 9.582031 2.699219 12.597656 3 10.960938-2.28125 28.058594-7.800781 54.300781-7.800781 16.199219 0 33.300781 2.398437 50.101563 7.199219 3.003906-.070313 7.832031 2.484374 16.199218-2.398438 14.257813-8.6875 30.058594-19.691406 45.898438-21.902344 3 8.402344 3.601562 30.300782-.898438 44.101563-2.402343 6.898437.296876 13.5 3.601563 17.402343 21.597656 25.5 27.898437 65.699219 15.898437 97.796876-9.300781 24-32.699218 54.902343-92.101562 63.601562l-23.097656 3.601562c14.160156 21.367188 15.652344 23.929688 18.601562 27.296876 5.996094 8.101562 10.496094 14.101562 10.496094 30.902343zm30-8.699219v-61.5c0-17.101562-3.601562-28.5-8.402344-36.902343 45.601563-12.296876 78.003906-39.300782 92.402344-78 15.300781-40.796876 8.402344-89.398438-17.101562-123 4.503906-20.097657 4.503906-52.199219-6.296876-67.199219-4.800781-6.597657-11.402343-10.199219-19.800781-10.199219-.300781 0-.300781 0-.300781 0-23.261719 1.257812-41.570312 12.972656-61.199219 24.898438-18-4.800782-36.300781-7.199219-54.601562-7.199219-18.597657 0-37.199219 2.699219-53.695313 7.199219-20.664062-12.460938-38.796875-23.671876-62.703125-24.898438-7.5 0-14.101562 3.601562-18.902343 10.199219-10.796876 15-10.796876 47.101562-6.296876 67.199219-25.503906 33.601562-32.402343 82.5-17.101562 123 14.398438 38.699218 46.800781 65.703124 92.402344 78-3.722656 6.511718-6.667969 14.914062-7.828125 26.285156-9.210938 3.175781-17.199219 4.210937-24.628907 2.027344-7.835937-2.316407-13.941406-7.546876-19.246093-16.46875-11.914063-20.015626-32.207031-36.355469-55.3125-34.230469l2.636719 29.882812c10.699218-.980469 21.347656 10.339844 26.878906 19.671875 9.125 15.367188 21.417968 25.445313 36.546875 29.914063 11.230469 3.308593 21.496093 3.230469 32.550781.871093v40.449219c-87.300781-30.601562-151-114-151-211.800781 0-124.199219 101.800781-227 226-227s226 102.800781 226 227c0 97.800781-63.699219 181.199219-151 211.800781zm0 0">
+					</path>
+				</svg>GitHub</a>
+		</div>
+	</footer>
+
+</body>
+
+</html>
