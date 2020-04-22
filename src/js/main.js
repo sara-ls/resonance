@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let soundImage = outerElem.querySelector("img");
 
         if (selectedSound.paused) {
+          // Play sound
           volumeControler.style.opacity = 1;
           selectedSound.loop = true;
           if (volumeControler.value == 0) volumeControler.value = 0.1;
@@ -96,11 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
             visual.classList.remove("off");
           }
         } else {
+          // Pause sound
           volumeControler.style.opacity = 0;
           selectedSound.pause();
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
+          // Turn off audio visualization animation
           if (!visual.classList.contains("off")) {
             visual.classList.add("off");
           }
@@ -110,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  // DOM elements that controll sound volume
+  // DOM elements that control sound volume
   const volumeControls = document.querySelectorAll(".volume-bar");
 
   // Adding listeners to every volume control slider
@@ -143,7 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function muteDocument() {
     if (!isMuted) {
-      currentSounds.length = 0;
       isMuted = true;
       document.querySelector(".unmuted").style.display = "none";
       document.querySelector(".muted").style.display = "inline";
@@ -160,10 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
         visual.classList.add("off");
       }
     } else {
-      isMuted = false;
+      isMuted = false; // Unmute
       document.querySelector(".unmuted").style.display = "inline";
       document.querySelector(".muted").style.display = "none";
       currentSounds.forEach((sound) => (sound[0].volume = sound[1]));
+
+      // Turn on audio visual animation if unmuting & currentSounds is not empty
       if (visual.classList.contains("off") && currentSounds.length > 0) {
         visual.classList.remove("off");
       }
