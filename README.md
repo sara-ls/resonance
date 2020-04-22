@@ -7,32 +7,21 @@ soudnscape
 Ambient Mix
  -->
 
+*An ambient noise mixer built with JavaScript*
+
 <!-- [LIVE SITE]() -->
 
 ## Description
 
-
-Ambient sounds mixer
-
-
-Create your perfect sound environment by mixing any of the sounds below.
-Click any sound icon to start.
-
-We provide background sounds that help to mask annoying noises
-in order to keep you sane, improve your focus and boost your productivity.
-
-Noisli is your little helper and companion no matter if you need to focus, tune out other noises or if you want to have a moment of calm and relax.
-
-Background sounds have great masking abilities in reducing the negative impact of sudden spikes in external noise and enabling you to focus for longer periods of time. Background sounds are also great for beating silence and creating a personal environment which fuels creativity and reduces stress.
-
+The right background noise can help create an atmosphere that fuels your creativity and reduces stress. This website allows you to create your perfect sound environment by mixing your favorite ambient sounds.
 
 ## Technologies
 
-- SCSS
-- HTML5
-- JavaScript
+- Vanilla JavaScript DOM Manipulation
 - Node.js
 - Webpack
+- Sass
+- HTML5
 
 ## Highlights
 
@@ -162,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-
 ## Credits / Libraries
 
 * Icons: [Icons8](https://icons8.com/), Freepik, [Flaticon](https://www.flaticon.com/)
@@ -171,4 +159,3 @@ document.addEventListener("DOMContentLoaded", () => {
 * CSS Reset: [normalize.css](github.com/necolas/normalize.css) 
   MIT License
 * Inspired by Noisli
-
