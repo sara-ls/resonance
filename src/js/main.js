@@ -57,9 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // Fade out and remove load-screen once all audio loaded
         let fadeTarget = document.getElementById("load-screen");
         fadeTarget.style.opacity = 0;
-        setTimeout(() => {
-          document.querySelector("body").removeChild(fadeTarget);
-        }, 500);
+        document.querySelector("body").removeChild(fadeTarget);
+
+        // Reveal navbar
+        document.querySelector("nav").classList.add("reveal");
       }
     }
   });
