@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fadeTarget.style.opacity = 0;
         setTimeout(() => {
           document.querySelector("body").removeChild(fadeTarget);
-        }, 800);
+        }, 500);
       }
     }
   });
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
       allAudio[i].currentTime = 0;
       allAudio[i].value = 0;
     }
-    let all_playBtnss = document.querySelectorAll(".start_btn img");
+    let all_playBtnss = document.querySelectorAll(".start-btn img");
     for (let i = 0; i < all_playBtnss.length; i++) {
       all_playBtnss[i].classList.remove("playing");
     }
