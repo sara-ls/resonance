@@ -1,4 +1,4 @@
-#load_screen {
+#load-screen {
   transition: opacity 1s;
   position: fixed;
   z-index: 999;
@@ -16,6 +16,9 @@
   background: linear-gradient(to top, $color-blue, lighten($color-blue, 1.2));
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: cover;
+
+
+  
 
 }
 
