@@ -42,29 +42,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.getElementById("count").innerText = percent + "%";
 
-      setTimeout(() => {
-        // Show water rising in loading animation
-        document.getElementById("water").style.transform = `translate(0, ${
-          100 - percent
-        }%)`;
-        // Last file loaded
-        if (loaded === allAudio.length) {
-          for (let i = 0; i < allAudio.length; i++) {
-            allAudio[i].removeEventListener("canplaythrough", loadSounds);
-          }
-
-          sound.pause();
-
-          // Fade out and remove load-screen once all audio loaded
-          setTimeout(() => {
-            let fadeTarget = document.getElementById("load-screen");
-            fadeTarget.style.opacity = 0;
-            setTimeout(() => {
-              document.querySelector("body").removeChild(fadeTarget);
-            }, 500);
-          }, 500);
+      // Show water rising in loading animation
+      document.getElementById("water").style.transform = `translate(0, ${
+        100 - percent
+      }%)`;
+      // Last file loaded
+      if (loaded === allAudio.length) {
+        for (let i = 0; i < allAudio.length; i++) {
+          allAudio[i].removeEventListener("canplaythrough", loadSounds);
         }
-      }, 200);
+
+        sound.pause();
+
+        // Fade out and remove load-screen once all audio loaded
+        let fadeTarget = document.getElementById("load-screen");
+        fadeTarget.style.opacity = 0;
+        setTimeout(() => {
+          document.querySelector("body").removeChild(fadeTarget);
+        }, 800);
+      }
     }
   });
 
