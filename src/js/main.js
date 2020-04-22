@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
-
+          
+          // Check if other sounds arer still playing
           let numPlaying = document.getElementsByClassName("playing").length;
           // Turn off audio visualization animation
           if (
@@ -200,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < all_playBtnss.length; i++) {
       all_playBtnss[i].classList.remove("playing");
     }
-    // let all_volumeControls = document.querySelectorAll(".volume-bar");
+
     for (let i = 0; i < volumeControls.length; i++) {
       volumeControls[i].value = 0;
       volumeControls[i].style.opacity = 0;
