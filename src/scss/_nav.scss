@@ -206,13 +206,29 @@ h1 {
 
     .reset-btn,
     .mute-btn {
-      top: 30px;
+      top: 50px;
     }
 
+    .reset-btn {
+      left: 10px;
+    }
+
+    .mute-btn {
+      right: 10px;
+    }
+
+    .control_container {
+
+      padding-top: 110px;
+    }
   }
 
   #line {
     top: 120px;
+  }
+
+  header p#home-desc {
+    margin-top: 150px;
   }
 }
 
