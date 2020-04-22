@@ -64,21 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Audio visualization
+  const visual = document.getElementById("visual");
+
   /*
    * SETUP SOUND CONTROL EVENT LISTENERS
    */
-  // DOM Elements that control play/stop sounds
-  let playBtns = document.querySelectorAll(".play");
 
   // Adding listeners to every play/stop button
-  for (let i = 0; i < playBtns.length; i++) {
-    playBtns[i].addEventListener(
+  document.querySelectorAll(".play").forEach((playBtn) => {
+    playBtn.addEventListener(
       "click",
       function playSound(e) {
         // Stop/start playing a sound
-        if (is_muted) {
-          muteDocument();
-        }
+        if (isMuted) muteDocument();
+
         let targetElement = e.target || e.srcElement;
         let outerElem = targetElement.parentElement.parentElement;
         let selectedSound = outerElem.querySelector("audio");
@@ -92,17 +92,23 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedSound.volume = volumeControler.value;
           selectedSound.play();
           soundImage.classList.add("playing");
+          if (visual.classList.contains("off")) {
+            visual.classList.remove("off");
+          }
         } else {
           volumeControler.style.opacity = 0;
           selectedSound.pause();
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
+          if (!visual.classList.contains("off")) {
+            visual.classList.add("off");
+          }
         }
       },
       false
     );
-  }
+  });
 
   // DOM elements that controll sound volume
   const volumeControls = document.querySelectorAll(".volume-bar");
@@ -114,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // DOM element that mutes and unmutes the page
-  let is_muted = false;
+  let isMuted = false;
   document
     .querySelector(".mute-btn a")
     .addEventListener("click", muteDocument, false);
@@ -126,9 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Volume controller
   function volumeSound(e) {
-    if (is_muted) {
-      muteDocument();
-    }
+    if (isMuted) muteDocument();
+
     let targetElement = e.target || e.srcElement;
     let selectedSound = targetElement.parentElement.querySelector("audio");
     selectedSound.volume = targetElement.value;
@@ -137,9 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentSounds = [];
 
   function muteDocument() {
-    if (!is_muted) {
+    if (!isMuted) {
       currentSounds.length = 0;
-      is_muted = true;
+      isMuted = true;
       document.querySelector(".unmuted").style.display = "none";
       document.querySelector(".muted").style.display = "inline";
       let allAudio = document.querySelectorAll("audio");
@@ -151,15 +156,24 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSounds.forEach(function (sound) {
         sound[0].volume = 0;
       });
+      if (!visual.classList.contains("off")) {
+        visual.classList.add("off");
+      }
     } else {
-      is_muted = false;
+      isMuted = false;
       document.querySelector(".unmuted").style.display = "inline";
       document.querySelector(".muted").style.display = "none";
       currentSounds.forEach((sound) => (sound[0].volume = sound[1]));
+      if (visual.classList.contains("off") && currentSounds.length > 0) {
+        visual.classList.remove("off");
+      }
     }
   }
 
   function resetSounds() {
+    if (!visual.classList.contains("off")) {
+      visual.classList.add("off");
+    }
     let allAudio = document.querySelectorAll("audio");
     for (let i = 0; i < allAudio.length; i++) {
       allAudio[i].pause();
