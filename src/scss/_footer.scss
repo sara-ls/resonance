@@ -3,8 +3,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(45deg, rgba(212, 232, 255, 0.95), #e7f1ff);
-  margin-top: 5em;
-  padding: 3em 0 2em 0;
+  padding: 1em 0 3em 0;
+
 
   // Reset link style
   a {
@@ -21,21 +21,20 @@ footer {
     display: flex;
     align-items: center;
     margin-bottom: 1.5em;
-    font: light 1em "Lato";
     color: black;
   }
 
-  .links-container {
+  >div {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 
 
     svg {
-      width: 1.3em;
+      width: 1.8em;
       height: 100%;
-      margin-right: 15px;
+      margin: 2em;
+      padding: 2px;
 
       path {
         fill: black;
@@ -44,9 +43,25 @@ footer {
 
     a:hover {
       text-decoration: underline $cyan;
+
       svg path {
         fill: $cyan;
       }
     }
-  } 
+  }
+
+  #footer-bottom {
+    >* {
+      padding: 0;
+      margin: 2px 10px;
+    }
+  }
+
+}
+
+@media all and (max-width: 490px) {
+  #footer-bottom>* {
+    font-size: 11px;
+    margin:0;
+  }
 }
