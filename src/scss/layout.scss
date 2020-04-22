@@ -41,12 +41,13 @@ body {
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   background-color: $color-blue;
-  
+
   .desc {
     display: flex;
     justify-content: center;
     font-size: 1.2em;
     margin: 3em 1em;
+        color: black;
   }
 }
 
