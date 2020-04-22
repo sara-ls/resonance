@@ -37,41 +37,41 @@ document.querySelectorAll(".play").forEach((playBtn) => {
 playBtn.addEventListener(
 "click",
 function playSound(e) {
-// Stop/start playing a sound
-if (isMuted) muteDocument();
+  // Stop/start playing a sound
+  if (isMuted) muteDocument();
 
-        let targetElement = e.target || e.srcElement;
-        let outerElem = targetElement.parentElement.parentElement;
-        let selectedSound = outerElem.querySelector("audio");
-        let volumeControler = outerElem.querySelector(".volume-bar");
-        let soundImage = outerElem.querySelector("img");
+    let targetElement = e.target || e.srcElement;
+    let outerElem = targetElement.parentElement.parentElement;
+    let selectedSound = outerElem.querySelector("audio");
+    let volumeControler = outerElem.querySelector(".volume-bar");
+    let soundImage = outerElem.querySelector("img");
 
-        if (selectedSound.paused) {
-          // Play sound
-          volumeControler.style.opacity = 1;
-          selectedSound.loop = true;
-          if (volumeControler.value == 0) volumeControler.value = 0.1;
-          selectedSound.volume = volumeControler.value;
-          selectedSound.play();
-          soundImage.classList.add("playing");
-          if (visual.classList.contains("off")) {
-            visual.classList.remove("off");
-          }
-        } else {
-          // Pause sound
-          volumeControler.style.opacity = 0;
-          selectedSound.pause();
-          selectedSound.currentTime = 0;
-          volumeControler.value = 0;
-          soundImage.classList.remove("playing");
-          // Turn off audio visualization animation
-          if (!visual.classList.contains("off")) {
-            visual.classList.add("off");
-          }
-        }
-      },
-      false
-    );
+    if (selectedSound.paused) {
+      // Play sound
+      volumeControler.style.opacity = 1;
+      selectedSound.loop = true;
+      if (volumeControler.value == 0) volumeControler.value = 0.1;
+      selectedSound.volume = volumeControler.value;
+      selectedSound.play();
+      soundImage.classList.add("playing");
+      if (visual.classList.contains("off")) {
+        visual.classList.remove("off");
+      }
+    } else {
+      // Pause sound
+      volumeControler.style.opacity = 0;
+      selectedSound.pause();
+      selectedSound.currentTime = 0;
+      volumeControler.value = 0;
+      soundImage.classList.remove("playing");
+      // Turn off audio visualization animation
+      if (!visual.classList.contains("off")) {
+        visual.classList.add("off");
+      }
+    }
+  },
+  false
+);
 
 });
 

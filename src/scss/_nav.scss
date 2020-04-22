@@ -180,19 +180,44 @@ h1 {
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (min-width: 500px) and (max-width: 700px) {
+
+  // Reduce logo size
   nav h1 {
-    font-size: 1em;
-    padding-top: 0.55em;
+    font-size: 1.4em;
+    padding-top: 0.7em;
   }
 
 }
 
-@media screen and (min-width: 600px) {
 
+@media all and (max-width: 499px) {
 
+  // Change navbar to 2 rows on small screens
   nav {
 
+    height: 120px;
+
+    h1 {
+      font-size: 30px;
+      display: block;
+      text-align: center;
+    }
+
+    .reset-btn,
+    .mute-btn {
+      top: 30px;
+    }
+
+  }
+
+  #line {
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  nav {
     .reset-btn {
       margin-right: 45px;
     }
@@ -200,7 +225,5 @@ h1 {
     .mute-btn {
       margin-right: 15px;
     }
-
-
   }
 }

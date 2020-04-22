@@ -89,10 +89,12 @@ document.addEventListener("DOMContentLoaded", () => {
           // Play sound
           volumeControler.style.opacity = 1;
           selectedSound.loop = true;
-          if (volumeControler.value == 0) volumeControler.value = 0.1;
+          if (volumeControler.value == 0) volumeControler.value = 0.05;
           selectedSound.volume = volumeControler.value;
           selectedSound.play();
           soundImage.classList.add("playing");
+
+          // Turn on audio visualization animation
           if (visual.classList.contains("off")) {
             visual.classList.remove("off");
           }
@@ -103,8 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
+
+          let numPlaying = document.getElementsByClassName("playing").length;
           // Turn off audio visualization animation
-          if (!visual.classList.contains("off")) {
+          if (
+            (!visual.classList.contains("off") && numPlaying === 0) ||
+            isMuted
+          ) {
             visual.classList.add("off");
           }
         }
@@ -150,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".unmuted").style.display = "none";
       document.querySelector(".muted").style.display = "inline";
       let allAudio = document.querySelectorAll("audio");
+
       for (let i = 0; i < allAudio.length; i++) {
         if (!allAudio[i].paused) {
           currentSounds.push([allAudio[i], allAudio[i].volume]);
@@ -158,6 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSounds.forEach(function (sound) {
         sound[0].volume = 0;
       });
+
+      // Turn off audio visual
       if (!visual.classList.contains("off")) {
         visual.classList.add("off");
       }
@@ -175,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function resetSounds() {
+    currentSounds = [];
     if (!visual.classList.contains("off")) {
       visual.classList.add("off");
     }
