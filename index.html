@@ -136,7 +136,7 @@
 	<div id="line"></div>
 
 	<header>
-		<p class="desc">
+		<p class="desc" style="margin-top: 7em;">
 			Create your perfect sound environment by mixing any of the sounds below.</br></br>
 			Click any sound icon to start.
 		</p>
@@ -146,6 +146,32 @@
 	<!-- Sounds -->
 	<section id="main">
 		<div class="sounds-container">
+
+			<!-- OCEAN -->
+			<div class="sound-container">
+				<audio>
+					<source src="sounds/ocean.mp3" type="audio/mpeg">
+					<source src="sounds/beach.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/beach.png" alt="Ocean Waves Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- RIVER -->
+			<div class="sound-container">
+				<audio>
+					<source src="sounds/river.mp3" type="audio/mpeg">
+					<source src="sounds/river.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/river.png" alt="River Sounds">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
+			</div>
 
 			<!-- RAIN -->
 			<div class="sound-container">
@@ -168,6 +194,19 @@
 				</audio>
 				<div class="start_btn">
 					<img src="images/thunder.png" alt="Thunder Sound">
+					<a class="play" href="#!"></a>
+				</div>
+				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
+			</div>
+
+			<!-- FIRE -->
+			<div class="sound-container">
+				<audio>
+					<source src="sounds/fire.mp3" type="audio/mpeg">
+					<source src="sounds/fire.ogg" type="audio/ogg">
+				</audio>
+				<div class="start_btn">
+					<img src="images/fire.png" alt="Fire Sound">
 					<a class="play" href="#!"></a>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
@@ -199,20 +238,6 @@
 				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
 			</div>
 
-			<!-- FIRE -->
-			<div class="sound-container">
-				<audio>
-					<source src="sounds/fire.mp3" type="audio/mpeg">
-					<source src="sounds/fire.ogg" type="audio/ogg">
-				</audio>
-				<div class="start_btn">
-					<img src="images/fire.png" alt="Fire Sound">
-					<a class="play" href="#!"></a>
-				</div>
-				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
-			</div>
-
-
 			<!-- BIRDS -->
 			<div class="sound-container">
 				<audio>
@@ -225,33 +250,6 @@
 				</div>
 				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
 			</div>
-
-			<!-- BEACH -->
-			<div class="sound-container">
-				<audio>
-					<source src="sounds/ocean.mp3" type="audio/mpeg">
-					<source src="sounds/beach.ogg" type="audio/ogg">
-				</audio>
-				<div class="start_btn">
-					<img src="images/beach.png" alt="Ocean Waves Sounds">
-					<a class="play" href="#!"></a>
-				</div>
-				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
-			</div>
-
-			<!-- RIVER -->
-			<div class="sound-container">
-				<audio>
-					<source src="sounds/river.mp3" type="audio/mpeg">
-					<source src="sounds/river.ogg" type="audio/ogg">
-				</audio>
-				<div class="start_btn">
-					<img src="images/river.png" alt="River Sounds">
-					<a class="play" href="#!"></a>
-				</div>
-				<input class="volume-bar" type="range" value="0" max="1" step="0.001">
-			</div>
-
 		</div>
 	</section>
 

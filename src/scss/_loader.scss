@@ -18,91 +18,82 @@
   background: cover;
 
 
-  
 
-}
-
-
-#water-fill {
-  position: relative;
-  top: 200px;
-
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    outline: none;
-  }
-
-  .box {
-    height: 220px;
-    width: 220px;
+  #water-fill {
     position: relative;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: black;
-    // Hide wave svg outside circle
-    border-radius: 100%;
-    overflow: hidden;
+    top: 6em;
 
-    #enter {
-      // 	Postition enter button in center
-      position: absolute;
-      top: 90px;
-      z-index: 1000;
-      left: 55px;
-      text-align: center;
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    .box {
+      height: 250px;
+      width: 250px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: black;
+      // Hide wave svg outside circle
       border-radius: 100%;
-      background-color: transparent;
-      font-size: 2em;
-      border-width: 0px;
-      color: white;
+      overflow: hidden;
 
-      path {
-        fill: white;
-      }
-
-      &:hover {
-
-        path {
-          fill: lightblue;
-        }
-      }
-    }
-
-    .percent {
-      // Hide percent text
-      display: none;
-    }
-
-    .water {
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      transform: translate(0, 100%);
-      background: blue;
-      transition: all 0.3s;
-
-      &_wave {
-        width: 200%;
+      #enter {
+        // 	Postition enter button in center
         position: absolute;
-        bottom: 100%;
+        top: 105px;
+        z-index: 1000;
+        left: 62px;
+        text-align: center;
+        border-radius: 100%;
+        background-color: transparent;
+        font-size: 2em;
+        border-width: 0px;
+        letter-spacing: 0.1em;
+        color: white;
 
-        &_back {
-          right: 0;
-          fill: lightblue;
-          animation: wave-back 1.4s infinite linear;
+        &:hover {
+          font-weight: bolder;
+          text-decoration: underline;
         }
+      }
 
-        &_front {
-          left: 0;
-          fill: blue;
-          margin-bottom: -1px;
-          animation: wave-front 0.7s infinite linear;
+      .percent {
+        // Hide percent text
+        display: none;
+      }
+
+      .water {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 100%);
+        background: blue;
+        transition: all 0.3s;
+
+        &_wave {
+          width: 200%;
+          position: absolute;
+          bottom: 100%;
+
+          &_back {
+            right: 0;
+            fill: lightblue;
+            animation: wave-back 1.4s infinite linear;
+          }
+
+          &_front {
+            left: 0;
+            fill: blue;
+            margin-bottom: -1px;
+            animation: wave-front 0.7s infinite linear;
+          }
         }
       }
     }

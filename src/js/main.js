@@ -21,42 +21,50 @@ document.addEventListener("DOMContentLoaded", () => {
     sound.play();
 
     // Load DOM Elements with sound
-    let all_sounds = document.querySelectorAll("audio");
+    const allAudio = document.querySelectorAll("audio");
 
-    for (let i = 0; i < all_sounds.length; i++) {
-      all_sounds[i].addEventListener("canplaythrough", loadSounds, false);
-      // Force reload in case some audio files already loaded to avoid stuck loading screen
-      all_sounds[i].load();
+    for (let i = 0; i < allAudio.length; i++) {
+      // Attach event listener to all audio files
+      // Execute loadSounds for each loaded file
+      allAudio[i].addEventListener("canplaythrough", loadSounds, false);
+      // Force reload in case audio files loaded, prevent stuck loading screen
+      allAudio[i].load();
     }
+
     let loaded = 0;
     let percent = 0;
 
     function loadSounds(e) {
       // Increment loaded counter to check if all sounds can be played
       loaded++;
-      // Calculate percent loaded
-      percent = Math.floor((100 * loaded) / all_sounds.length);
+      // Calculate percent of audio files loaded
+      percent = Math.floor((100 * loaded) / allAudio.length);
+
       document.getElementById("count").innerText = percent + "%";
-      // Show water rising in loading animation
-      document.getElementById("water").style.transform = `translate(0, ${
-        100 - percent
-      }%)`;
 
-      if (loaded == all_sounds.length) {
-        for (let i = 0; i < all_sounds.length; i++) {
-          all_sounds[i].removeEventListener("canplaythrough", loadSounds);
-        }
-        sound.pause();
+      setTimeout(() => {
+        // Show water rising in loading animation
+        document.getElementById("water").style.transform = `translate(0, ${
+          100 - percent
+        }%)`;
+        // Last file loaded
+        if (loaded === allAudio.length) {
+          for (let i = 0; i < allAudio.length; i++) {
+            allAudio[i].removeEventListener("canplaythrough", loadSounds);
+          }
 
-        // Fade out and remove load-screen once loaded
-        setTimeout(() => {
-          let fadeTarget = document.getElementById("load-screen");
-          fadeTarget.style.opacity = 0;
+          sound.pause();
+
+          // Fade out and remove load-screen once all audio loaded
           setTimeout(() => {
-            document.querySelector("body").removeChild(fadeTarget);
-          }, 2000);
-        }, 1000);
-      }
+            let fadeTarget = document.getElementById("load-screen");
+            fadeTarget.style.opacity = 0;
+            setTimeout(() => {
+              document.querySelector("body").removeChild(fadeTarget);
+            }, 500);
+          }, 500);
+        }
+      }, 200);
     }
   });
 
