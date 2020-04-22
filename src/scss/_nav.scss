@@ -2,7 +2,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 4em;
+  height: 70px;
   background-color: white;
   z-index: 90;
 
@@ -10,9 +10,9 @@ nav {
 
   .mute-btn svg,
   .reset-btn svg {
-    width: 32px;
+    width: 38px;
     height: auto;
-    padding: 1em;
+    padding: 1em 0.5em;
   }
 
   .reset-btn {
@@ -21,13 +21,13 @@ nav {
 }
 
 h1 {
-  font-size: 1.5em;
-  margin: 0.5em;
+  font-size: 2em;
+  margin: 0.3em 0;
   background-color: #ffffff;
   color: #242943;
   display: inline-block;
-  line-height: 1.65em;
-  padding: 0 0.2em 0 0.4em;
+  /* line-height: 1.8em; */
+  padding: 0.2em 0.4em 0.2em 0.6em;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -41,7 +41,7 @@ h1 {
 .control_container {
   position: fixed;
 
-  padding-top: 50px;
+  padding-top: 32px;
 
   top: 0;
   left: calc(50% - 2em);
@@ -113,9 +113,9 @@ h1 {
 #line {
   width: 100%;
   height: 3px;
-  background-image: linear-gradient(90deg, #022144 30%, #004bff 70%, rgba(52, 255, 255, 0.97) 80%, rgb(41, 222, 255));
+  background-image: linear-gradient(90deg, #022144 30%, #004bff 65%, rgba(52, 255, 255, 0.97) 80%, rgb(41, 222, 255));
   position: fixed;
-  top: 4em;
+  top: 70px;
   z-index: 80;
   box-shadow: 1px 0 8px #000000;
 }
@@ -125,9 +125,9 @@ h1 {
 .music {
 
   span {
+    // Each bar
     animation: audio-wave 2s infinite ease-in-out;
     background: $color-blue;
-    bottom: calc(50% - 0.4em);
     position: absolute;
     display: block;
     height: 0.3em;
@@ -187,4 +187,21 @@ h1 {
     padding-top: 0.55em;
   }
 
+}
+
+@media screen and (min-width: 600px) {
+
+
+  nav {
+
+    .reset-btn {
+      margin-right: 45px;
+    }
+
+    .mute-btn {
+      margin-right: 15px;
+    }
+
+
+  }
 }

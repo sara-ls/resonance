@@ -98,7 +98,7 @@ class Cursor {
       this.dot.style.transform = "translate(-50%, -50%) scale(0.8)";
       this.dot.style.backgroundColor = "#fd013a";
 
-      this.outline.style.transform = "translate(-50%, -50%) scale(2.5)";
+      this.outline.style.transform = "translate(-50%, -50%) scale(2.2)";
       this.outline.style.backgroundColor = "transparent";
       this.outline.style.borderColor = "#fd013a";
     } else {
