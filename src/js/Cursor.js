@@ -1,7 +1,7 @@
 // CUSTOM CURSOR
 class Cursor {
   constructor() {
-    this.delay = 4; // Delay cursor outline
+    this.delay = 6; // Delay cursor outline
 
     // Cursor outline position
     this._x = 0;
@@ -34,18 +34,17 @@ class Cursor {
     let that = this;
 
     // Expand when hovering over clickable element
-    document
-      .querySelectorAll("a, button, input, .show-code-btn > svg")
-      .forEach((aElem) => {
-        aElem.addEventListener("mouseover", () => {
-          that.cursorEnlarged = true;
-          that.toggleCursorSize();
-        });
-        aElem.addEventListener("mouseout", () => {
-          that.cursorEnlarged = false;
-          that.toggleCursorSize();
-        });
+    document.querySelectorAll("a, button, input").forEach((aElem) => {
+      // On hover ever
+      aElem.addEventListener("mouseover", (e) => {
+        that.cursorEnlarged = true;
+        that.toggleCursorSize(e.currentTarget);
       });
+      aElem.addEventListener("mouseout", () => {
+        that.cursorEnlarged = false;
+        that.toggleCursorSize();
+      });
+    });
 
     // Click events
     document.addEventListener("mousedown", () => {
@@ -94,17 +93,20 @@ class Cursor {
   }
 
   // Expand/contract cursor dot/outline
-  toggleCursorSize() {
+  toggleCursorSize(hovered) {
     if (this.cursorEnlarged) {
       this.dot.style.transform = "translate(-50%, -50%) scale(0.8)";
       this.dot.style.backgroundColor = "#fd013a";
-      this.dot.style.borderWidth = "0px";
-      this.outline.style.transform = "translate(-50%, -50%) scale(2)";
+
+      this.outline.style.transform = "translate(-50%, -50%) scale(2.5)";
+      this.outline.style.backgroundColor = "transparent";
+      this.outline.style.borderColor = "#fd013a";
     } else {
       this.dot.style.transform = "translate(-50%, -50%) scale(1)";
-      this.dot.style.backgroundColor = "#08459c";
-      this.dot.style.borderWidth = "1px";
+      this.dot.style.backgroundColor = "#0ff";
+      this.outline.style.backgroundColor = "rgba(255,255,255, 0.3)";
       this.outline.style.transform = "translate(-50%, -50%) scale(1)";
+      this.outline.style.borderColor = "black";
     }
   }
 

@@ -19,24 +19,26 @@ body {
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   z-index: 100000;
+    border: 1px solid black;
 }
 
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: lighten($dark-blue, 0.1);
+  background-color: $color-glitch-two;
   z-index: 100001;
-  border: 1px solid rgba($light-cyan, 0.4);
 }
 
 .cursor-dot-outline {
   width: 35px;
+
   height: 35px;
-  background-color: rgba($color-glitch-two, 0.3);
+  background-color: rgba(rgb(255, 255, 255), 0.3);
 }
 
 /* smartphones, touchscreens */
 @media (hover: none) and (pointer: coarse) {
+
   .cursor-dot,
   .cursor-dot-outline {
     display: none;
