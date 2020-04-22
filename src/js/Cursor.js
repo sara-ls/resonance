@@ -96,10 +96,14 @@ class Cursor {
   // Expand/contract cursor dot/outline
   toggleCursorSize() {
     if (this.cursorEnlarged) {
-      this.dot.style.transform = "translate(-50%, -50%) scale(0.75)";
+      this.dot.style.transform = "translate(-50%, -50%) scale(0.8)";
+      this.dot.style.backgroundColor = "#fd013a";
+      this.dot.style.borderWidth = "0px";
       this.outline.style.transform = "translate(-50%, -50%) scale(2)";
     } else {
       this.dot.style.transform = "translate(-50%, -50%) scale(1)";
+      this.dot.style.backgroundColor = "#08459c";
+      this.dot.style.borderWidth = "1px";
       this.outline.style.transform = "translate(-50%, -50%) scale(1)";
     }
   }

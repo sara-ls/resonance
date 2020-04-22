@@ -113,7 +113,7 @@ h1 {
 #line {
   width: 100%;
   height: 3px;
-  background-image: linear-gradient(90deg, #577394, #b5d7fff5 75%, #00ffffd4);
+  background-image: linear-gradient(90deg, #577394 50%, rgba($pale-blue, 0.95) 70%, rgba($color-glitch-two, 0.6) 80%, rgba($cyan, 0.9));
   position: fixed;
   top: 4em;
   z-index: 500;

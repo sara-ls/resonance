@@ -2,7 +2,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: white;
+  background: linear-gradient(45deg, rgba(212, 232, 255, 0.95), #e7f1ff);
   margin-top: 5em;
   padding: 3em 0 2em 0;
 
@@ -44,12 +44,12 @@ footer {
 
     a:hover {
       text-decoration: underline;
-      color: $color-blue;
-      text-decoration-color: $color-glitch-two;
+      // color: $dark-blue;
+      text-decoration-color: $color-red;
 
-      path {
-        fill: $color-blue;
-      }
+      // path {
+      //   fill: $dark-blue;
+      // }
     }
   }
 }

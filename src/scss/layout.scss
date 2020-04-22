@@ -40,13 +40,8 @@ body {
   overflow: auto;
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
-  background: -webkit-linear-gradient(to top,
-      $color-blue,
-      rgba($color-blue, 0.5));
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top,
-      $color-blue,
-      rgba($color-blue, 0.5));
+  background-color: $color-blue;
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   .desc {
