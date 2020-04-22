@@ -1,4 +1,4 @@
-# Resonance
+![RESONANCE Logo](./images/logo.png)
 
 <!-- 
 Resonate
@@ -7,7 +7,7 @@ soudnscape
 Ambient Mix
  -->
 
-*An ambient noise mixer built with JavaScript*
+![RESONANCE Icon](./icon/favicon.ico) *An ambient noise mixer built with JavaScript*
 
 [LIVE SITE](https://sara-ls.github.io/resonance/)
 
@@ -24,6 +24,8 @@ The right background noise can help create an atmosphere that fuels your creativ
 - HTML5
 
 ## Highlights
+
+![Resonance demo GIF](https://media.giphy.com/media/L2MhjmdI8gDj7dkCi1/giphy.gif)
 
 - Audio visualization animation that moves only when sounds ar played
 
