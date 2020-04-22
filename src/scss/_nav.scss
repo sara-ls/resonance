@@ -7,11 +7,16 @@ nav {
   z-index: 90;
 
 
-  .mute-btn svg, .reset-btn svg  {
+
+  .mute-btn svg,
+  .reset-btn svg {
     width: 40px;
     height: auto;
-    padding: 5px;
-    margin: 0 5px;
+    padding: 10px;
+  }
+
+  .reset-btn {
+    margin-right: 15px;
   }
 }
 
@@ -23,11 +28,14 @@ nav {
 
 .control_container {
   position: fixed;
-  top: 1.8em;
-  left: calc(50% - 2.5em);
+
+  padding-top: 48px;
+
+  top: 0;
+  left: calc(50% - 2em);
   display: flex;
-  /* align-items: flex-start; */
-  /* flex-wrap: wrap; */
+
+
   justify-content: space-between;
 }
 
