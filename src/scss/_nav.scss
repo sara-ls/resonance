@@ -10,14 +10,28 @@ nav {
 
   .mute-btn svg,
   .reset-btn svg {
-    width: 40px;
+    width: 32px;
     height: auto;
-    padding: 10px;
+    padding: 1em;
   }
 
   .reset-btn {
     margin-right: 15px;
   }
+
+  
+}
+
+h1 {
+font-size: 1.5em;
+margin: 0.5em;
+background-color: #ffffff;
+color: #242943;
+display: inline-block;
+line-height: 1.65em;
+padding: 0 0.2em 0 0.4em;
+text-transform: uppercase;
+letter-spacing: 0.2em;
 }
 
 .reset-btn .muted {
