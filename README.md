@@ -7,9 +7,9 @@ soudnscape
 Ambient Mix
  -->
 
-![RESONANCE Icon](./icon/favicon.ico) *An ambient noise mixer built with JavaScript*
+*An ambient noise mixer built with JavaScript*
 
-[LIVE SITE](https://sara-ls.github.io/resonance/)
+![RESONANCE Icon](./icon/favicon.ico)  [LIVE SITE](https://sara-ls.github.io/resonance/)
 
 ## Description
 
