@@ -12,7 +12,7 @@ Ambient Mix
 
 ## Description
 
-The right background noise can help create an atmosphere that fuels your creativity and reduces stress. This website allows you to create your perfect sound environment by mixing your favorite ambient sounds.
+The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment by mixing your favorite ambient sounds.
 
 ## Technologies
 
