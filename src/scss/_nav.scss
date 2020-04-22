@@ -30,20 +30,12 @@ h1 {
   letter-spacing: 0.2em;
 }
 
-.reset-btn .muted {
-  display: none;
-}
-
 .control_container {
   position: fixed;
-
   padding-top: 11px;
-
   top: 0;
   left: calc(50% - 2em);
   display: flex;
-
-
   justify-content: space-between;
 }
 
@@ -71,40 +63,26 @@ h1 {
   margin-left: 0;
 }
 
-.mute-btn {
+a {
+  color: white;
+  text-decoration: none;
+}
 
+.mute-btn {
   position: fixed;
   top: 0;
   right: 0;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .muted {
-    display: none;
-  }
-
-
 }
 
 .reset-btn {
   position: fixed;
   top: 0;
   right: 50px;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .muted {
-    display: none;
-  }
-
 }
 
+.muted {
+  display: none;
+}
 
 #line {
   width: 100%;
@@ -137,7 +115,6 @@ h1 {
         animation-delay: 0.25s * ($i - 1);
       }
     }
-
   }
 
   &.off span {
@@ -180,7 +157,7 @@ h1 {
 
 
 
-/* Header */
+/* NavBar Reveal */
 
 @-moz-keyframes reveal-header {
   0% {
@@ -242,26 +219,26 @@ nav {
 
   &.reveal {
 
-    -moz-animation: reveal-header 1.2s ease;
-    -webkit-animation: reveal-header 1.2s ease;
-    -ms-animation: reveal-header 1.2s ease;
-    animation: reveal-header 1.2s ease;
+    -moz-animation: reveal-header 1s ease;
+    -webkit-animation: reveal-header 1s ease;
+    -ms-animation: reveal-header 1s ease;
+    animation: reveal-header 1s ease;
     opacity: 1;
     top: 0;
 
     +#line {
-      animation: 1.2s slideInFromLeft 1s 1 ease;
-      transition: opacity 1.2s ease-in 1s;
+      animation: 1s slideInFromLeft 0.6s 1 ease;
+      transition: opacity 1s ease-in 0.6s;
       opacity: 1;
     }
 
     .mute-btn,
     .reset-btn,
     .control_container {
-      -moz-animation: reveal-header 1.2s ease;
-      -webkit-animation: reveal-header 1.2s ease;
-      -ms-animation: reveal-header 1.2s ease;
-      animation: reveal-header 1.2s ease;
+      -moz-animation: reveal-header 1s ease;
+      -webkit-animation: reveal-header 1s ease;
+      -ms-animation: reveal-header 1s ease;
+      animation: reveal-header 1s ease;
     }
   }
 }
@@ -287,7 +264,6 @@ nav {
     font-size: 1.4em;
     padding-top: 0.7em;
   }
-
 }
 
 
@@ -337,8 +313,6 @@ nav {
         transition: all 1.2s ease;
       }
     }
-
-
   }
 
   #line {

@@ -34,7 +34,6 @@ footer {
       width: 1.8em;
       height: 100%;
       margin: 2em;
-      padding: 2px;
 
       path {
         fill: black;
@@ -62,6 +61,6 @@ footer {
 @media all and (max-width: 490px) {
   #footer-bottom>* {
     font-size: 11px;
-    margin:0;
+    margin: 0;
   }
 }
