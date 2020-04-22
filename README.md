@@ -9,7 +9,7 @@ Ambient Mix
 
 *An ambient noise mixer built with JavaScript*
 
-<!-- [LIVE SITE]() -->
+[LIVE SITE](https://sara-ls.github.io/resonance/)
 
 ## Description
 
