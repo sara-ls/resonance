@@ -36,12 +36,10 @@ h1 {
   display: none;
 }
 
-
-
 .control_container {
   position: fixed;
 
-  padding-top: 32px;
+  padding-top: 11px;
 
   top: 0;
   left: calc(50% - 2em);
@@ -58,7 +56,7 @@ h1 {
 }
 
 .control_container>* {
-  width: calc(100% - 0em);
+  width: 100%;
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
@@ -129,6 +127,7 @@ h1 {
     animation: audio-wave 2s infinite ease-in-out;
     background: $color-blue;
     position: absolute;
+    bottom: calc(50% - 2em);
     display: block;
     height: 0.3em;
     width: 0.6em;
