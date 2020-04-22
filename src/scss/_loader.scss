@@ -16,6 +16,7 @@
     position: relative;
     top: 6em;
 
+
     *,
     *:before,
     *:after {
@@ -50,7 +51,6 @@
 
         &:hover {
           font-weight: bolder;
-          text-decoration: underline;
         }
       }
 

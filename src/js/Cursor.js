@@ -95,17 +95,20 @@ class Cursor {
   // Expand/contract cursor dot/outline
   toggleCursorSize(hovered) {
     if (this.cursorEnlarged) {
-      this.dot.style.transform = "translate(-50%, -50%) scale(0.8)";
+      this.dot.style.transform = "translate(-50%, -50%) width: 5px";
       this.dot.style.backgroundColor = "#fd013a";
 
-      this.outline.style.transform = "translate(-50%, -50%) scale(2.2)";
+      this.outline.style.width = "68px";
+      this.outline.style.height = "68px";
       this.outline.style.backgroundColor = "transparent";
       this.outline.style.borderColor = "#fd013a";
     } else {
       this.dot.style.transform = "translate(-50%, -50%) scale(1)";
       this.dot.style.backgroundColor = "#0ff";
       this.outline.style.backgroundColor = "rgba(255,255,255, 0.3)";
-      this.outline.style.transform = "translate(-50%, -50%) scale(1)";
+
+      this.outline.style.width = "32px";
+      this.outline.style.height = "32px";
       this.outline.style.borderColor = "black";
     }
   }

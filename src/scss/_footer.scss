@@ -43,8 +43,10 @@ footer {
     }
 
     a:hover {
-      text-decoration: underline;
-      text-decoration-color: $color-red;
+      text-decoration: underline $cyan;
+      svg path {
+        fill: $cyan;
+      }
     }
-  }
+  } 
 }
