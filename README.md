@@ -22,8 +22,6 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ![RESONANCE Preview desktop](./images/resonance-1280x640.png)
 
-![RESONANCE mobile](./images/resonance-iphonex.png)
-
 ### Audio visualization animation that moves only when sounds are played
 
 ![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
