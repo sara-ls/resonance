@@ -34,17 +34,22 @@ class Cursor {
     let that = this;
 
     // Expand when hovering over clickable element
-    document.querySelectorAll("a, button, input").forEach((aElem) => {
-      // On hover ever
-      aElem.addEventListener("mouseover", (e) => {
-        that.cursorEnlarged = true;
-        that.toggleCursorSize(e.currentTarget);
+    document
+      .querySelectorAll("a, button, input")
+      .forEach((aElem) => {
+        // On hover ever
+        aElem.addEventListener("mouseover", (e) => {
+          that.cursorEnlarged = true;
+          // if (aElem.classList.contains("reset-a")) {
+          //   document.getElementById("reset-label").style.display = "inline-block";
+          // }
+          that.toggleCursorSize(e.currentTarget);
+        });
+        aElem.addEventListener("mouseout", () => {
+          that.cursorEnlarged = false;
+          that.toggleCursorSize();
+        });
       });
-      aElem.addEventListener("mouseout", () => {
-        that.cursorEnlarged = false;
-        that.toggleCursorSize();
-      });
-    });
 
     // Click events
     document.addEventListener("mousedown", () => {
