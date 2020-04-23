@@ -1,6 +1,6 @@
 ![RESONANCE Logo](./images/logo.png)
 
-*An ambient noise mixer built with JavaScript*
+*An ambient noise mixer built with Node.js*
 
 ![RESONANCE Icon](./icon/favicon.ico)  **[LIVE SITE](https://sara-ls.github.io/resonance/)**
 
@@ -12,8 +12,8 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ## **Technologies**
 
-* JavaScript
 * Node.js
+* Vanilla JavaScript DOM Manipulation
 * Webpack
 * Sass
 * HTML5
