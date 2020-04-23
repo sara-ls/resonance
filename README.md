@@ -8,8 +8,6 @@
 
 The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment for work, relaxing, or just to drown out your noisy neighbors.
 
-![RESONANCE Preview](./images/resonance-1280x640.png)
-
 ## Technologies
 
 - JavaScript
@@ -20,9 +18,15 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ## Highlights
 
-![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
+### Fully responsive layout, optimized for desktop and mobile
 
-- Audio visualization animation that moves only when sounds are played
+![RESONANCE Preview desktop](./images/resonance-1280x640.png)
+
+![RESONANCE mobile](./images/resonance-iphonex.png)
+
+### Audio visualization animation that moves only when sounds are played
+
+![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
 
 ```js
 // Audio visualization
@@ -143,7 +147,7 @@ const visual = document.getElementById("visual");
 
 ```
 
-- Custom cursor that responds to hovering over a clickable element
+### Custom cursor that responds to hovering over a clickable element
 
 ```js
 // CUSTOM CURSOR
@@ -269,9 +273,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-![Splash Page](https://media.giphy.com/media/YlSan2ttzXukQnHFYQ/giphy.gif)
+### Water animation that rises as audio files load
 
-- Water animation that rises as audio files load
+![Splash Page](https://media.giphy.com/media/YlSan2ttzXukQnHFYQ/giphy.gif)
 
 ```js
 // LOADING ANIMATION
