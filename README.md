@@ -2,11 +2,13 @@
 
 *An ambient noise mixer built with JavaScript*
 
-![RESONANCE Icon](./icon/favicon.ico)  [LIVE SITE](https://sara-ls.github.io/resonance/)
+![RESONANCE Icon](./icon/favicon.ico)  **[LIVE SITE](https://sara-ls.github.io/resonance/)**
 
 ## Description
 
 The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment for work, relaxing, or just to drown out your noisy neighbors.
+
+![RESONANCE Preview](./images/resonance-1280x640.png)
 
 ## Technologies
 
