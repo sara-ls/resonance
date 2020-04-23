@@ -8,6 +8,8 @@
 
 The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment for work, relaxing, or just to drown out your noisy neighbors.
 
+![RESONANCE Preview desktop](./images/resonance-1280x640.png)
+
 ## Technologies
 
 - JavaScript
@@ -17,10 +19,6 @@ The right background noise can help create an atmosphere that fuels your creativ
 - HTML5
 
 ## Highlights
-
-### Fully responsive layout, optimized for desktop and mobile
-
-![RESONANCE Preview desktop](./images/resonance-1280x640.png)
 
 ### Audio visualization animation that moves only when sounds are played
 
@@ -336,6 +334,9 @@ sound.play();
 
 ```
 
+### Fully responsive layout, optimized for desktop and mobile
+
+![RESONANCE mobile](./images/resonance-iphonex.png)
 
 ## Credits / Libraries
 
