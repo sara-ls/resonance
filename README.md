@@ -220,18 +220,17 @@ class Cursor {
     // Cursor outline position
     this._x = 0;
     this._y = 0;
-
+    
     // Cursor dot position
     this.dotX = window.innerWidth / 2;
     this.dotY = window.innerHeight / 2;
-
+    
     this.cursorVisible = true;
     this.cursorEnlarged = false;
 
     // Grab cursor elements
     this.dot = document.querySelector(".cursor-dot");
     this.outline = document.querySelector(".cursor-dot-outline");
-
     this.dotSize = this.dot.offsetWidth;
     this.outlineSize = this.outline.offsetWidth;
 
@@ -276,7 +275,6 @@ class Cursor {
       // Show the cursor
       that.cursorVisible = true;
       that.toggleCursorVisibility();
-
       that.dotX = e.pageX;
       that.dotY = e.pageY;
       that.dot.style.top = that.dotY + "px";
@@ -318,7 +316,7 @@ class Cursor {
     }
   }
 
-  // Hide/show cursor
+  // Hide/show cursor when cursor moves on/off screen
   toggleCursorVisibility() {
     if (this.cursorVisible) {
       this.dot.style.opacity = 1;
@@ -329,10 +327,6 @@ class Cursor {
     }
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  let cursor = new Cursor();
-});
 ```
 
 ## Credits / Libraries
