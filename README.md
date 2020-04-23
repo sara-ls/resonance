@@ -20,6 +20,11 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ## Highlights
 
+
+### Fully responsive layout, optimized for desktop and mobile
+
+![RESONANCE mobile](./images/resonance-iphonexframe.png)
+
 ### Audio visualization animation that moves only when sounds are played
 
 ![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
@@ -333,10 +338,6 @@ sound.play();
 });
 
 ```
-
-### Fully responsive layout, optimized for desktop and mobile
-
-![RESONANCE mobile](./images/resonance-iphonex.png)
 
 ## Credits / Libraries
 
