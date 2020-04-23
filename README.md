@@ -20,9 +20,9 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ## Highlights
 
-![Resonance demo GIF](https://media.giphy.com/media/L2MhjmdI8gDj7dkCi1/giphy.gif)
+![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
 
-- Audio visualization animation that moves only when sounds ar played
+- Audio visualization animation that moves only when sounds are played
 
 ```js
 // Audio visualization
@@ -268,6 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let cursor = new Cursor();
 });
 ```
+
+![Splash Page](https://media.giphy.com/media/YlSan2ttzXukQnHFYQ/giphy.gif)
 
 - Water animation that rises as audio files load
 
