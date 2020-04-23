@@ -26,8 +26,6 @@ The right background noise can help create an atmosphere that fuels your creativ
 
 ### Water animation that rises as audio files load
 
-![Splash Page](https://media.giphy.com/media/YlSan2ttzXukQnHFYQ/giphy.gif)
-
 ```js
 // LOADING ANIMATION
 
