@@ -18,6 +18,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
 	<link rel="manifest" href="icon/site.webmanifest">
 
+	<script src="./lazysizes.min.js"></script>
 	<script src="./bundle.js"></script>
 </head>
 
@@ -32,8 +33,8 @@
 		<header>
 			<h1>Resonance</h1>
 			<p class="desc">
-				This website plays audio. </br></br>Check your system volume, then click START to start mixing your perfect
-				sound atmosphere.
+				This website plays audio. </br></br>Check your system volume, then click START to begin crafting your perfect
+				sound atmosphere. 
 			</p>
 		</header>
 
@@ -141,8 +142,9 @@
 
 	<header>
 		<p class="desc" id="home-desc">
-			Create your perfect sound environment by mixing any of the sounds below.</br></br>
-			Click any sound icon to start.
+			Create your perfect sound environment by mixing a variety of ambient noises.</br></br>
+			Click any icon below to start playing that sound. </br>Then, use the slider to adjust the volume or click the icon again to turn
+			the sound off.
 		</p>
 	</header>
 
@@ -198,7 +200,7 @@
 					<source src="sounds/thunder.ogg" type="audio/ogg">
 				</audio>
 				<div class="start-btn">
-					<img src="images/thunder.png" alt="Thunder Sound">
+					<img class="lazyload" data-src="images/thunder.png" alt="Thunder Sound">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -211,7 +213,7 @@
 					<source src="sounds/fire.ogg" type="audio/ogg">
 				</audio>
 				<div class="start-btn">
-					<img src="images/fire.png" alt="Fire Sound">
+					<img class="lazyload" data-src="images/fire.png" alt="Fire Sound">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -237,7 +239,7 @@
 					<source src="sounds/leaves.ogg" type="audio/ogg">
 				</audio>
 				<div class="start-btn">
-					<img src="images/leaves.png" alt="Leaves in Wind Sound">
+					<img class="lazyload" data-src="images/leaves.png" alt="Leaves in Wind Sound">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -250,7 +252,7 @@
 					<source src="sounds/wind.ogg" type="audio/ogg">
 				</audio>
 				<div class="start-btn">
-					<img src="images/wind.png" alt="Wind Sounds">
+					<img class="lazyload" data-src="images/wind.png" alt="Wind Sounds">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -276,7 +278,7 @@
 					<!-- <source src="sounds/night.ogg" type="audio/ogg"> -->
 				</audio>
 				<div class="start-btn">
-					<img src="images/night.png" alt="Night Nature Sounds">
+					<img class="lazyload" data-src="images/night.png" alt="Night Nature Sounds">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -289,7 +291,7 @@
 					<!-- <source src="sounds/keyboard.ogg" type="audio/ogg"> -->
 				</audio>
 				<div class="start-btn">
-					<img src="images/keyboard.png" alt="Keyboard Typing Sounds">
+					<img class="lazyload" data-src="images/keyboard.png" alt="Keyboard Typing Sounds">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
@@ -302,7 +304,7 @@
 					<source src="sounds/pinknoise.ogg" type="audio/ogg">
 				</audio>
 				<div class="start-btn">
-					<img src="images/noise.png" alt="Pink Noise Sounds">
+					<img class="lazyload" data-src="images/noise.png" alt="Pink Noise Sounds">
 					<button class="play"></button>
 				</div>
 				<input class="volume-bar" type="range" value="0" max="0.9" step="0.001">
