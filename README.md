@@ -1,28 +1,94 @@
 ![RESONANCE Logo](./images/logo.png)
 
-*An ambient noise mixer built with JavaScript*
+*An ambient noise mixer built with Node.js*
 
 ![RESONANCE Icon](./icon/favicon.ico)  **[LIVE SITE](https://sara-ls.github.io/resonance/)**
 
-## Description
+## **Description**
 
 The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment for work, relaxing, or just to drown out your noisy neighbors.
 
-![RESONANCE Preview](./images/resonance-1280x640.png)
+![RESONANCE Preview desktop](./images/resonance-1280x640.png)
 
-## Technologies
+## **Technologies**
 
-- JavaScript
-- Node.js
-- Webpack
-- Sass
-- HTML5
+* Node.js
+* Vanilla JavaScript DOM Manipulation
+* Webpack
+* Sass
+* HTML5
 
-## Highlights
+## **Highlights**
+
+### Fully responsive layout, optimized for desktop and mobile
+
+![RESONANCE mobile](./images/resonance-iphonexframe.png)
+
+### Water animation that rises as audio files load
+
+```js
+// LOADING ANIMATION
+
+// Import water pouring loading sound
+const sound = new Audio(
+  "https://actions.google.com/sounds/v1/water/water_drains_in_pipe.ogg"
+);
+
+document.getElementById("enter").addEventListener("click", (e) => {
+// Hide enter button
+e.currentTarget.style.background = "transparent";
+e.currentTarget.style.border = "1px solid transparent";
+e.currentTarget.innerHTML = "";
+sound.play();
+
+  // Load DOM Elements with sound
+  const allAudio = document.querySelectorAll("audio");
+
+  for (let i = 0; i < allAudio.length; i++) {
+    // Attach event listener to all audio files
+    // Execute loadSounds for each loaded file
+    allAudio[i].addEventListener("canplaythrough", loadSounds, false);
+    // Force reload in case audio files loaded, prevent stuck loading screen
+    allAudio[i].load();
+  }
+
+  let loaded = 0;
+  let percent = 0;
+
+  function loadSounds(e) {
+    // Increment loaded counter to check if all sounds can be played
+    loaded++;
+    // Calculate percent of audio files loaded
+    percent = Math.floor((100 * loaded) / allAudio.length);
+
+    document.getElementById("count").innerText = percent + "%";
+
+    // Show water rising in loading animation
+    document.getElementById("water").style.transform = `translate(0, ${
+      100 - percent
+    }%)`;
+    // Last file loaded
+    if (loaded === allAudio.length) {
+      for (let i = 0; i < allAudio.length; i++) {
+        allAudio[i].removeEventListener("canplaythrough", loadSounds);
+      }
+
+      sound.pause();
+
+      // Fade out and remove load-screen once all audio loaded
+      let fadeTarget = document.getElementById("load-screen");
+      fadeTarget.style.opacity = 0;
+      setTimeout(() => {
+        document.querySelector("body").removeChild(fadeTarget);
+      }, 500);
+    }
+  }
+});
+```
+
+### Audio visualization animation that moves only when sounds are played
 
 ![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
-
-- Audio visualization animation that moves only when sounds are played
 
 ```js
 // Audio visualization
@@ -143,7 +209,7 @@ const visual = document.getElementById("visual");
 
 ```
 
-- Custom cursor that responds to hovering over a clickable element
+### Custom cursor that responds to hovering over a clickable element
 
 ```js
 // CUSTOM CURSOR
@@ -154,18 +220,17 @@ class Cursor {
     // Cursor outline position
     this._x = 0;
     this._y = 0;
-
+    
     // Cursor dot position
     this.dotX = window.innerWidth / 2;
     this.dotY = window.innerHeight / 2;
-
+    
     this.cursorVisible = true;
     this.cursorEnlarged = false;
 
     // Grab cursor elements
     this.dot = document.querySelector(".cursor-dot");
     this.outline = document.querySelector(".cursor-dot-outline");
-
     this.dotSize = this.dot.offsetWidth;
     this.outlineSize = this.outline.offsetWidth;
 
@@ -210,7 +275,6 @@ class Cursor {
       // Show the cursor
       that.cursorVisible = true;
       that.toggleCursorVisibility();
-
       that.dotX = e.pageX;
       that.dotY = e.pageY;
       that.dot.style.top = that.dotY + "px";
@@ -252,7 +316,7 @@ class Cursor {
     }
   }
 
-  // Hide/show cursor
+  // Hide/show cursor when cursor moves on/off screen
   toggleCursorVisibility() {
     if (this.cursorVisible) {
       this.dot.style.opacity = 1;
@@ -263,77 +327,7 @@ class Cursor {
     }
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  let cursor = new Cursor();
-});
 ```
-
-![Splash Page](https://media.giphy.com/media/YlSan2ttzXukQnHFYQ/giphy.gif)
-
-- Water animation that rises as audio files load
-
-```js
-// LOADING ANIMATION
-
-// Import water pouring loading sound
-const sound = new Audio(
-  "https://actions.google.com/sounds/v1/water/water_drains_in_pipe.ogg"
-);
-
-document.getElementById("enter").addEventListener("click", (e) => {
-// Hide enter button
-e.currentTarget.style.background = "transparent";
-e.currentTarget.style.border = "1px solid transparent";
-e.currentTarget.innerHTML = "";
-sound.play();
-
-  // Load DOM Elements with sound
-  const allAudio = document.querySelectorAll("audio");
-
-  for (let i = 0; i < allAudio.length; i++) {
-    // Attach event listener to all audio files
-    // Execute loadSounds for each loaded file
-    allAudio[i].addEventListener("canplaythrough", loadSounds, false);
-    // Force reload in case audio files loaded, prevent stuck loading screen
-    allAudio[i].load();
-  }
-
-  let loaded = 0;
-  let percent = 0;
-
-  function loadSounds(e) {
-    // Increment loaded counter to check if all sounds can be played
-    loaded++;
-    // Calculate percent of audio files loaded
-    percent = Math.floor((100 * loaded) / allAudio.length);
-
-    document.getElementById("count").innerText = percent + "%";
-
-    // Show water rising in loading animation
-    document.getElementById("water").style.transform = `translate(0, ${
-      100 - percent
-    }%)`;
-    // Last file loaded
-    if (loaded === allAudio.length) {
-      for (let i = 0; i < allAudio.length; i++) {
-        allAudio[i].removeEventListener("canplaythrough", loadSounds);
-      }
-
-      sound.pause();
-
-      // Fade out and remove load-screen once all audio loaded
-      let fadeTarget = document.getElementById("load-screen");
-      fadeTarget.style.opacity = 0;
-      setTimeout(() => {
-        document.querySelector("body").removeChild(fadeTarget);
-      }, 500);
-    }
-  }
-});
-
-```
-
 
 ## Credits / Libraries
 
