@@ -2,7 +2,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 72px;
   background-color: white;
   z-index: 90;
 
@@ -13,18 +13,29 @@ nav {
     padding: 1em 0.5em;
   }
 
+  .mute-btn,
   .reset-btn {
-    margin-right: 15px;
+    position: fixed;
+    top: 0px;
+    margin-top: 10px;
+    right: 0;
   }
 
-  //  label {
-  //    display: none;
-  //    font-size: 12px;
-  //    color: $dark-blue;
-  //    position: absolute;
-  //    top: 50%;
-  //    left: 25%;
-  //  }
+  .reset-btn {
+    margin-right: 15px;
+    right: 50px;
+    max-width: 55px;
+  }
+
+  label {
+    position: absolute;
+    top: -3px;
+    font-size: 0.75em;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #08459d;
+  }
 }
 
 h1 {
@@ -74,18 +85,6 @@ h1 {
 
 
 
-.mute-btn {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.reset-btn {
-  position: fixed;
-  top: 0;
-  right: 50px;
-}
-
 .muted {
   display: none;
 }
@@ -95,9 +94,9 @@ h1 {
   height: 3px;
   background-image: linear-gradient(90deg, #022144 30%, #004bff 65%, rgba(52, 255, 255, 0.97) 80%, rgb(41, 222, 255));
   position: fixed;
-  top: 70px;
-  z-index: 91;
-  box-shadow: 0px 1px 6px -6px #000000;
+  top: 72px;
+  z-index: 1000;
+  opacity: 0;
 }
 
 
@@ -156,15 +155,12 @@ h1 {
     transform: translateY(0px);
     background: $color-blue;
     border-radius: 0.1em;
-
-
   }
 }
 
 
 
 /* NavBar Reveal */
-
 @-moz-keyframes reveal-header {
   0% {
     top: -70px;
@@ -215,9 +211,6 @@ h1 {
 
 
 
-#line {
-  opacity: 0;
-}
 
 nav {
   opacity: 0;

@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < allAudio.length; i++) {
           allAudio[i].removeEventListener("canplaythrough", loadSounds);
         }
-        window.scroll(0, window.screenTop)
+        window.scroll(0, window.screenTop);
         // sound.pause();
 
         // Fade out and remove load-screen once all audio loaded
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
-          
+
           // Check if other sounds arer still playing
           let numPlaying = document.getElementsByClassName("playing").length;
           // Turn off audio visualization animation
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentSounds.forEach(function (sound) {
         sound[0].volume = 0;
       });
-
+      document.querySelector(".mute-btn label").innerText = "UNMUTE";
       // Turn off audio visual
       if (!visual.classList.contains("off")) {
         visual.classList.add("off");
@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       isMuted = false; // Unmute
       document.querySelector(".unmuted").style.display = "inline";
       document.querySelector(".muted").style.display = "none";
+      document.querySelector(".mute-btn label").innerText = "MUTE";
       currentSounds.forEach((sound) => (sound[0].volume = sound[1]));
 
       // Turn on audio visual animation if unmuting & currentSounds is not empty
