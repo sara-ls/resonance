@@ -1,3 +1,4 @@
+"use strict";
 import "../scss/main.scss";
 import Cursor from "./Cursor";
 
@@ -8,18 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
   /*
    * LOADING SCREEN
    */
-
-  // Import water pouring loading sound
-  // const sound = new Audio(
-  //   "https://actions.google.com/sounds/v1/water/water_drains_in_pipe.ogg"
-  // );
-
   document.getElementById("enter").addEventListener("click", (e) => {
     // Hide enter button
     e.currentTarget.style.background = "transparent";
     e.currentTarget.style.border = "1px solid transparent";
     e.currentTarget.innerHTML = "";
-    // sound.play();
 
     // Load audio files
     const allAudio = main.querySelectorAll("audio");
@@ -53,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
           allAudio[i].removeEventListener("canplaythrough", loadSounds);
         }
         window.scroll(0, window.screenTop);
-        // sound.pause();
 
         // Fade out and remove load-screen once all audio loaded
         let fadeTarget = document.getElementById("load-screen");
@@ -253,9 +246,10 @@ document.addEventListener("DOMContentLoaded", () => {
   stopRecord.addEventListener("click", () => {
     if (isRecording) {
       isRecording = false;
-      record.style.backgroundColor = "grey";
-      record.innerText = "Start"
+      record.style.backgroundColor = "white";
+      record.innerText = "Start";
       rec.stop();
+      if (!isMuted) muteDocument();
     }
   });
 });
