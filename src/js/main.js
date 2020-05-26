@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     e.currentTarget.innerHTML = "";
     // sound.play();
 
-    // Load audio files
-    const allAudio = main.querySelectorAll("audio");
+    // Load DOM Elements with sound
+    const allAudio = document.querySelectorAll("audio");
 
     for (let i = 0; i < allAudio.length; i++) {
       // Attach event listener to all audio files
@@ -209,53 +209,4 @@ document.addEventListener("DOMContentLoaded", () => {
       volumeControls[i].style.opacity = 0;
     }
   }
-
-  // RECORDING
-  let rec;
-  let isRecording = false;
-  let audioChunks;
-  function sendData(data) {}
-
-  // Start recording
-  record.addEventListener("click", (e) => {
-    if (!isRecording) {
-      isRecording = true;
-      // Wait for user permission to record
-      navigator.mediaDevices.getUserMedia({ audio: true }).then(
-        (stream) => {
-          rec = new MediaRecorder(stream);
-          record.style.backgroundColor = "pink";
-          record.innerText = "RECORDING";
-          audioChunks = [];
-          // Wait for the streamed audio data
-          rec.ondataavailable = (e) => {
-            audioChunks.push(e.data);
-            if (rec.state == "inactive") {
-              // blob object stores recording as binary file
-              let blob = new Blob(audioChunks, {
-                type: "audio/mpeg-3",
-              });
-
-              // Convert blob to URL to add as src for audio player
-              recordedAudio.src = URL.createObjectURL(blob);
-              recordedAudio.controls = true;
-              recordedAudio.autoplay = true;
-              sendData(blob);
-            }
-          };
-          rec.start();
-        },
-        () => console.log("Recording permission denied.")
-      );
-    }
-  });
-
-  stopRecord.addEventListener("click", () => {
-    if (isRecording) {
-      isRecording = false;
-      record.style.backgroundColor = "grey";
-      record.innerText = "Start"
-      rec.stop();
-    }
-  });
 });
