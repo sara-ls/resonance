@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < allAudio.length; i++) {
           allAudio[i].removeEventListener("canplaythrough", loadSounds);
         }
-
+        window.scroll(0, window.screenTop)
         // sound.pause();
 
         // Fade out and remove load-screen once all audio loaded
