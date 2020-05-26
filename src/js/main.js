@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
           allAudio[i].removeEventListener("canplaythrough", loadSounds);
         }
         window.scroll(0, window.screenTop);
-        // sound.pause();
+        
+        document.querySelector("footer").style.position = "relative";
 
         // Fade out and remove load-screen once all audio loaded
         let fadeTarget = document.getElementById("load-screen");
