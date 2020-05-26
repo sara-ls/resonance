@@ -4,9 +4,8 @@ footer {
   justify-content: center;
   background: linear-gradient(45deg, rgba(212, 232, 255, 0.95), #e7f1ff);
   padding: 1em 0 3em 0;
+  border-top: 3px solid white;
 
-
-  // Reset link style
   a {
     margin: 0;
     padding: 0;
@@ -62,5 +61,17 @@ footer {
   #footer-bottom>* {
     font-size: 11px;
     margin: 0;
+  }
+}
+
+@media all and (min-width: 600px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #main {
+    margin-bottom: 200px;
   }
 }
