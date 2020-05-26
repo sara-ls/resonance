@@ -98,5 +98,10 @@
 
   #main .sounds-container {
     grid-template-columns: 1fr;
+    grid-row-gap: 0;
+  }
+
+  #main .sounds-container .sound-container>.start-btn {
+    margin-bottom: 20px;
   }
 }

@@ -13,12 +13,14 @@ body {
 
   .desc {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: black;
-    font-size: 1.1em;
+    font-size: 1.05em;
     font-weight: 400;
     margin: 1em;
     margin-bottom: 2.5em;
+    line-height: 1.5;
   }
 }
 
@@ -45,5 +47,12 @@ header {
   #home-desc {
     margin-top: 7em;
   }
+}
+
+@media all and (max-width: 500px) {
+    header>#home-desc {
+      margin: 9.5em 1em 1em 1em;
+      font-size: 0.9em;
+    }
 }
 
