@@ -1,6 +1,6 @@
 ![RESONANCE Logo](./images/logo.png)
 
-*An ambient noise mixer built with JavaScipt and Sass*
+*An ambient noise mixer built with JavaScript and Sass*
 
 ![RESONANCE Icon](./icon/favicon.ico)  **[LIVE SITE](https://sara-ls.github.io/resonance/)**
 
