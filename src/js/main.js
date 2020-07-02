@@ -1,9 +1,9 @@
 import "../scss/main.scss";
-import Cursor from "./Cursor";
+// import Cursor from "./Cursor";
 
 document.addEventListener("DOMContentLoaded", () => {
   // INSERT CUSTOM CURSOR
-  let cursor = new Cursor();
+  // let cursor = new Cursor();
 
   /*
    * LOADING SCREEN
