@@ -1,6 +1,6 @@
 "use strict";
 import "../scss/main.scss";
-import setupRecord from "./record";
+// import setupRecord from "./record";
 import setupLoadScreen from "./load_screen";
 import setupSoundControls from "./sound_controls";
 // import Cursor from "./Cursor";
@@ -22,7 +22,7 @@ const setup = () => {
     // Setup sound controls
     setupSoundControls();
 
-    setupRecord();
+    // setupRecord();
   });
 };
 
