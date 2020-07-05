@@ -1,4 +1,10 @@
 const path = require("path");
+// const glob = require("glob");
+// const PurgecssPlugin = require("purgecss-webpack-plugin");
+
+// const PATHS = {
+//   src: path.join(__dirname, "src"),
+// };
 
 module.exports = {
   entry: "./src/js/main.js",
@@ -6,6 +12,7 @@ module.exports = {
     path: path.resolve(__dirname),
     filename: "bundle.js",
   },
+
   module: {
     rules: [
       {
@@ -18,4 +25,9 @@ module.exports = {
       },
     ],
   },
+  // plugins: [
+  //   new PurgecssPlugin({
+  //     paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+  //   }),
+  // ],
 };

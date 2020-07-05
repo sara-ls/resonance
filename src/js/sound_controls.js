@@ -1,100 +1,8 @@
-![RESONANCE Logo](./images/logo.png)
-
-*An ambient noise mixer built with JavaScript and Sass*
-
-![RESONANCE Icon](./icon/favicon.ico)  **[LIVE SITE](https://sara-ls.github.io/resonance/)**
-
-## **Description**
-
-The right background noise can help create an atmosphere that fuels your creativity and reduces stress. RESONANCE allows you to create your perfect sound environment for work, relaxing, or just to drown out your noisy neighbors.
-
-![RESONANCE Preview desktop](./images/resonance-1280x640.png)
-
-## **Technologies**
-
-* Vanilla JavaScript DOM Manipulation (ES6)
-* Webpack
-* Sass
-* HTML5
-* npm
-
-## **Highlights**
-
-### Fully responsive layout, optimized for desktop and mobile
-
-![RESONANCE mobile](./images/resonance-iphonexframe.png)
-
-### Water animation that rises as audio files load
-
-```js
-// LOADING ANIMATION
-
-// Import water pouring loading sound
-const sound = new Audio(
-  "https://actions.google.com/sounds/v1/water/water_drains_in_pipe.ogg"
-);
-
-document.getElementById("enter").addEventListener("click", (e) => {
-// Hide enter button
-e.currentTarget.style.background = "transparent";
-e.currentTarget.style.border = "1px solid transparent";
-e.currentTarget.innerHTML = "";
-sound.play();
-
-  // Load DOM Elements with sound
-  const allAudio = document.querySelectorAll("audio");
-
-  for (let i = 0; i < allAudio.length; i++) {
-    // Attach event listener to all audio files
-    // Execute loadSounds for each loaded file
-    allAudio[i].addEventListener("canplaythrough", loadSounds, false);
-    // Force reload in case audio files loaded, prevent stuck loading screen
-    allAudio[i].load();
-  }
-
-  let loaded = 0;
-  let percent = 0;
-
-  function loadSounds(e) {
-    // Increment loaded counter to check if all sounds can be played
-    loaded++;
-    // Calculate percent of audio files loaded
-    percent = Math.floor((100 * loaded) / allAudio.length);
-
-    document.getElementById("count").innerText = percent + "%";
-
-    // Show water rising in loading animation
-    document.getElementById("water").style.transform = `translate(0, ${
-      100 - percent
-    }%)`;
-    // Last file loaded
-    if (loaded === allAudio.length) {
-      for (let i = 0; i < allAudio.length; i++) {
-        allAudio[i].removeEventListener("canplaythrough", loadSounds);
-      }
-
-      sound.pause();
-
-      // Fade out and remove load-screen once all audio loaded
-      let fadeTarget = document.getElementById("load-screen");
-      fadeTarget.style.opacity = 0;
-      setTimeout(() => {
-        document.querySelector("body").removeChild(fadeTarget);
-      }, 500);
-    }
-  }
-});
-```
-
-### Audio visualization animation that moves only when sounds are played
-
-![RESONANCE demo gif](https://media.giphy.com/media/SsUXlTe8SN5qYhOC4y/giphy.gif)
-
-```js
-// Audio visualization
-const visual = document.getElementById("visual");
-
-// Adding listeners to every play/stop button
+/*
+ * SETUP SOUND CONTROL EVENT LISTENERS
+ */
+const setupSoundControls = () => {
+  // Adding listeners to every play/stop button
   document.querySelectorAll(".play").forEach((playBtn) => {
     playBtn.addEventListener(
       "click",
@@ -128,6 +36,7 @@ const visual = document.getElementById("visual");
           selectedSound.currentTime = 0;
           volumeControler.value = 0;
           soundImage.classList.remove("playing");
+
           // Check if other sounds arer still playing
           let numPlaying = document.getElementsByClassName("playing").length;
           // Turn off audio visualization animation
@@ -189,7 +98,7 @@ const visual = document.getElementById("visual");
       currentSounds.forEach(function (sound) {
         sound[0].volume = 0;
       });
-
+      document.querySelector(".mute-btn label").innerText = "UNMUTE";
       // Turn off audio visual
       if (!visual.classList.contains("off")) {
         visual.classList.add("off");
@@ -198,6 +107,7 @@ const visual = document.getElementById("visual");
       isMuted = false; // Unmute
       document.querySelector(".unmuted").style.display = "inline";
       document.querySelector(".muted").style.display = "none";
+      document.querySelector(".mute-btn label").innerText = "MUTE";
       currentSounds.forEach((sound) => (sound[0].volume = sound[1]));
 
       // Turn on audio visual animation if unmuting & currentSounds is not empty
@@ -207,13 +117,27 @@ const visual = document.getElementById("visual");
     }
   }
 
-```
+  function resetSounds() {
+    currentSounds = [];
+    if (!visual.classList.contains("off")) {
+      visual.classList.add("off");
+    }
+    let allAudio = document.querySelectorAll("audio");
+    for (let i = 0; i < allAudio.length; i++) {
+      allAudio[i].pause();
+      allAudio[i].currentTime = 0;
+      allAudio[i].value = 0;
+    }
+    let all_playBtnss = document.querySelectorAll(".start-btn img");
+    for (let i = 0; i < all_playBtnss.length; i++) {
+      all_playBtnss[i].classList.remove("playing");
+    }
 
-## Credits / Libraries
+    for (let i = 0; i < volumeControls.length; i++) {
+      volumeControls[i].value = 0;
+      volumeControls[i].style.opacity = 0;
+    }
+  }
+};
 
-* Icons: [Icons8](https://icons8.com/), Freepik, [Flaticon](https://www.flaticon.com/)
-* Sounds from [Free Sounds Library](https://www.freesoundslibrary.com/)
-  [Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
-* CSS Reset: [normalize.css](github.com/necolas/normalize.css) 
-  MIT License
-* Inspired by Noisli
+export default setupSoundControls;

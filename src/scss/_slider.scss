@@ -1,6 +1,5 @@
 
 input[type=range] {
-
   -webkit-appearance: none;
   width: 50%;
   max-width: 150px;
@@ -23,7 +22,6 @@ input[type=range] {
   &::-ms-track {
     width: 50%;
     max-width: 200px;
-
     background: transparent;
     border-color: BLACK;
     color: transparent;
@@ -65,14 +63,11 @@ input[type=range] {
   // }
 
   &::-webkit-slider-runnable-track {
-
     width: 50%;
     max-width: 150px;
     height: 4px;
     border-bottom: 4px solid rgba(255, 255, 255, 0.5);
     background-color: white;
-
-
   }
 
   // &::-moz-range-track {
@@ -97,30 +92,30 @@ input[type=range] {
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 1em;
-    height: 1em;
-    margin-top: -4px;
+    width: 20px;
+    height: 20px;
+    margin-top: -7px;
     background-color: white;
     border-radius: 50%;
-    border: 0 solid black;
+    border: 2px solid $light-blue;
   }
 
   &::-moz-range-thumb {
-    width: 1em;
-    height: 1em;
-    margin-top: -4px;
+    width: 20px;
+    height: 20px;
+    margin-top: -7px;
     background-color: white;
     border-radius: 50%;
-    border: 0 solid black;
+    border: 2px solid black;
   }
 
   &::-ms-thumb {
-    width: 1em;
-    height: 1em;
-    margin-top: -4px;
+    width: 20px;
+    height: 20px;
+    margin-top: -7px;
     background-color: white;
     border-radius: 50%;
-    border: 0 solid black;
+    border: 2px solid black;
   }
 
   &:focus {
@@ -129,7 +124,6 @@ input[type=range] {
 
 
   &:hover {
-
     &::-webkit-slider-thumb,
     &::-moz-range-thumb,
     &::-ms-thumb {
