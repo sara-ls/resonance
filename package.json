@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "css-loader": "^5.2.0",
-    "file-loader": "^6.0.0"
+    "file-loader": "^6.2.0"
   }
 }
