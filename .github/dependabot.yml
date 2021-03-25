@@ -1,9 +1,10 @@
-version: 1
-update_configs:
-  - package_manager: "javascript"
+version: 2
+updates:
+  - package-ecosystem: "npm"
     directory: "/"
-    update_schedule: "weekly"
-    default_labels:
+    schedule:
+      interval: "weekly"
+    labels:
       - "dependencies"
-    default_reviewers:
+    reviewers:
       - "sara-ls"
