@@ -6,5 +6,5 @@ updates:
       interval: "weekly"
     labels:
       - "dependencies"
-    reviewers:
+    assignees:
       - "sara-ls"
