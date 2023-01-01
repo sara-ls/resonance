@@ -14,10 +14,10 @@
   "devDependencies": {
     "jest": "^26.6.3",
     "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^13.2.0",
     "style-loader": "^1.1.4",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "css-loader": "^5.2.0",
